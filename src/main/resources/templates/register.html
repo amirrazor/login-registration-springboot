@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+
+  <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+  <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+
+
+</head>
+<body>
+<div style="width:600px;margin-left: auto;margin-right: auto;margin-top:24px;padding: 24px;">
+  <div class="card">
+    <div class="card-header">
+<h1 class="text-center mt-5">Registration Form</h1>
+<div class="container mt-5">
+  <form id="registration-form">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="username">Email:</label>
+      <input type="email" class="form-control" id="username" name="username">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+    <div class="text-center mt-5">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('registration-form');
+  const errorMessage = document.getElementById('error-message');
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const data = {
+      firstName: form.elements.firstName.value,
+      lastName: form.elements.lastName.value,
+      username: form.elements.username.value,
+      password: form.elements.password.value
+    };
+
+    const response = await fetch('/api/v1/registration', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      window.location.href = '/index';
+    } else {
+      const errorText = await response.text();
+      errorMessage.innerText = errorText;
+      errorMessage.style.display = 'block';
+    }
+  });
+</script>
+    </div>
+  </div>
+</div>
+</body>
+</html>

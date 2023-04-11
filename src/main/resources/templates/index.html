@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the homepage</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5">Welcome to the homepage</h1>
+    <p class="text-center">You are successfully logged in.</p>
+    <div class="text-center mt-5">
+        <form th:action="@{/logout}" method="post" class="d-inline">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+    <hr>
+    <div class="mt-5">
+        <h2>Spring Boot</h2>
+        <p>
+            Spring Boot is an open-source Java-based framework used to create microservices and stand-alone applications. It simplifies the development process by providing production-ready defaults, reducing the need for boilerplate code, and offering built-in support for dependency management, security, and many other features.
+        </p>
+    </div>
+    <div class="mt-5">
+        <h2>Java Language</h2>
+        <p>
+            Java is a popular, object-oriented, high-level programming language that is designed to run on any platform with a Java Virtual Machine (JVM). It is known for its portability, scalability, and strong community support. Java is widely used in web development, mobile applications, and enterprise applications.
+        </p>
+    </div>
+    <div class="mt-5">
+        <h2>Blockchains</h2>
+        <p>
+            Blockchain is a distributed, decentralized, and immutable digital ledger that stores data across multiple nodes. It is most commonly associated with cryptocurrencies like Bitcoin, but its applications extend beyond finance to areas like supply chain management, digital identity verification, and more. Blockchain technology has the potential to disrupt traditional systems and create new, more secure and transparent ways of conducting transactions and storing data.
+        </p>
+    </div>
+</div>
+
+<footer>
+    <div class="d-flex justify-content-center
+                    mb-4 h4">
+
+
+        <a class="btn btn-light btn-social mr-2"
+           href="https://www.linkedin.com/in/amir-razaghkhah-3a654923b/"
+           target="_blank"><i
+                class="fab fa-linkedin-in my-text-primary"></i></a>
+        <a class="btn btn-light btn-social mr-2"
+           href="https://www.instagram.com/crypto.with.amir/"
+           target="_blank"><i
+                class="fab fa-instagram text-warning"></i></a>
+
+        <a class="btn btn-light btn-social mr-2"
+           href="https://www.youtube.com/channel/UCo1_p4Z1XELqyTCp_VBt6Aw"
+           target="_blank"><i
+                class="fab fa-youtube text-danger"></i></a>
+
+        <a class="btn btn-light btn-social mr-2"
+           href="https://twitter.com/CryptoWithAmir"
+           target="_blank"><i
+                class="fab fa-twitter text-info"></i></a>
+
+        <a class="btn btn-light btn-social mr-2"
+           href="https://github.com/amirrazor" target="_blank">
+            <i class="fab fa-github text-dark"></i></a>
+
+        <a class="btn btn-light btn-social"
+           href="mailto:cryptowithamir@gmail.com"
+           target="_blank">
+            <i class="fas fa-envelope text-success"></i></a>
+    </div>
+</footer>
+
+</body>
+</html>
