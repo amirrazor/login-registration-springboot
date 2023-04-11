@@ -27,7 +27,7 @@ public class WebSecurityConfig  {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests()
+                .authorizeHttpRequests()
                 .requestMatchers("/register",
                         "/resources/**",
                         "/js/**",
@@ -48,9 +48,7 @@ public class WebSecurityConfig  {
 
     }
 
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(daoAuthenticationProvider());
-    }
+
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
