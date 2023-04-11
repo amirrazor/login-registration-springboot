@@ -4,7 +4,6 @@ package com.example.registration.registration;
 import com.example.registration.user.User;
 import com.example.registration.user.UserRole;
 import com.example.registration.user.UserService;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

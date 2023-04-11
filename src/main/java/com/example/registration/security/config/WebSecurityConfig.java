@@ -48,8 +48,6 @@ public class WebSecurityConfig  {
 
     }
 
-
-
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
